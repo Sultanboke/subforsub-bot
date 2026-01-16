@@ -18,7 +18,7 @@ async def lihat_file(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None
         member = await context.bot.get_chat_member(CHANNEL, user_id)
         if member.status in ['member', 'administrator', 'creator']:
             await update.message.reply_text("Selamat! Kamu sudah join.\nIni filenya: https://example.com/filemu.pdf")
-            # Kalau mau kirim file sungguhan:
+            # Kalau mau kirim file sungguhan, uncomment:
             # await context.bot.send_document(update.effective_chat.id, document=open('filemu.pdf', 'rb'))
         else:
             keyboard = [[InlineKeyboardButton("JOIN CHANNEL SEKARANG", url=f"https://t.me/{CHANNEL[1:]}")]]
